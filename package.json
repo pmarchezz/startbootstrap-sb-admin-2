@@ -1,0 +1,8 @@
+{
+  "name": "sb-admin-2",
+  "version": "0.0.1",
+  "main": "dist/js/sb-admin-2.js",
+  "dependencies": {
+    "metismenu": "latest"
+  }
+}
