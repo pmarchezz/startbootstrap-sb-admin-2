@@ -1,4 +1,4 @@
-module.exports = function() {
+var configure = function() {
     $('#side-menu').metisMenu();
     $(window).bind("load resize", function() {
         topOffset = 50;
@@ -26,3 +26,4 @@ module.exports = function() {
         element.addClass('active');
     });
 }
+module.exports = configure;
