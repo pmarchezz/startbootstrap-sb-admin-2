@@ -14,7 +14,8 @@
 }(this, function ($) {
     return function() {
         $('#side-menu').metisMenu();
-        $(window).bind("load resize", function() {
+
+        var adjust = function() {
             topOffset = 50;
             width = (this.window.innerWidth > 0) ? this.window.innerWidth : this.screen.width;
             if (width < 768) {
@@ -29,9 +30,14 @@
             if (height < 1) height = 1;
             if (height > topOffset) {
                 $("#page-wrapper").css("min-height", (height) + "px");
+                console.debug($("#page-wrapper").css("min-height"));
             }
-        });
+        };
 
+        $(window).bind("load resize", adjust);
+        adjust();
+        /*
+         * useless as we're using aurelia to bind classes
         var url = window.location;
         var element = $('ul.nav a').filter(function() {
             return this.href == url || url.href.indexOf(this.href) == 0;
@@ -39,5 +45,6 @@
         if (element.is('li')) {
             element.addClass('active');
         };
+        */
     };
 }));
